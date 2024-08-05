@@ -1,0 +1,40 @@
+---
+import Carroussel from '../components/Carroussel.astro';
+import Header from '../components/Header.astro';
+import PrimaryBtn from '../components/PrimaryBtn.astro';
+import TertiaryBtn from '../components/TertiaryBtn.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Conheça: Atomoon">
+	<Header/>
+	
+	<main class="w-[100vw] h-[100vh] bg-gradient-to-t from-[#090A11] to-[#141624] overflow-hidden mt-0 pt-16">
+		<div class="bg-[url('/images/background-img-hero.png')] h-[100vh] w-[100vw] bg-center bg-cover flex items-center justify-center">
+			<div class="flex flex-col items-center gap-4 w-full px-64">
+				<h1 class="bg-gradient-to-b from-white font-bold to-gray-500 text-6xl inline-block text-transparent bg-clip-text">
+					Solução de problemas
+				</h1>
+				<h1 class="bg-gradient-to-b from-white font-bold to-gray-500 text-6xl inline-block text-transparent bg-clip-text">do micro ao macro.</h1>
+				<p class="text-white max-w-96 text-center pt-8">Descubra como nossas soluções de UX podem transformar seu website, aplicativo móvel ou desktop.</p>
+				<div class="flex items-center justify-center gap-4 pt-8">
+					<TertiaryBtn text='Quero um orçamento' url="#"/>
+					<PrimaryBtn text='Quero te conhecer primeiro' url="#"/>
+				</div>
+
+				<div class="pt-8">
+					<h6 class="rounded-full border-[#FFE2B0] border-[0.025rem] bg-[#fbba4bc4] px-4 py-1 text-white font-bold">+ de 30 clientes satisfeitos</h6>
+				</div>
+
+				<Carroussel />
+			</div>
+		</div>
+	</main>
+
+	<div class="bg-[#090A11] h-96 w-full px-64 overflow-hidden">
+		
+	</div>
+
+</Layout>
+
+<!-- shadow-[inset_0px_-1px_50px_-36px_rgba(249,195,103,1)]  -->
