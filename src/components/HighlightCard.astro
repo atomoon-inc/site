@@ -1,0 +1,16 @@
+---
+interface Props {
+	title: string;
+	iconUrl: string;
+	description: string;
+}
+const { title, iconUrl, description } = Astro.props;
+---
+
+<div class="p-[0.1rem] h-64 bg-gradient-to-r from-[rgba(255,255,255,0.1)] via-40% via-transparent to-[rgba(255,255,255,0.1)] overflow-hidden rounded-lg backdrop-blur-lg shadow-2xl">
+    <div class="flex flex-col h-full justify-start items-start bg-[rgba(12,13,20,1)] p-4 rounded-lg overflow-hidden">
+        <img src={iconUrl}/>
+        <h6 class="bg-gradient-to-b from-white font-bold to-gray-500 text-3xl inline-block py-3 text-transparent bg-clip-text">{title}</h6>
+        <p class="text-white w-64">{description}</p>
+    </div>
+</div>

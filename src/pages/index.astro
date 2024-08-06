@@ -1,9 +1,45 @@
 ---
+import Card from '../components/Card.astro';
 import Carroussel from '../components/Carroussel.astro';
 import Header from '../components/Header.astro';
+import HighlightCard from '../components/HighlightCard.astro';
 import PrimaryBtn from '../components/PrimaryBtn.astro';
 import TertiaryBtn from '../components/TertiaryBtn.astro';
 import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'Vama Industrial',
+    tags: [
+      { hexTag: '#FF5733', textTag: 'CMS' },
+    ],
+    description: 'Veja como facilitamos a vida do time de marketing para a inserção de novos maquinários dessa gigante da indústria automobilística.',
+    primaryHref: '/projetos/vama',
+    tertiaryHref: 'https://vama.com.br',
+	img: '/images/thumbs/thumb-vama.png'
+  },
+  {
+    title: 'Morada Reiss',
+    tags: [
+      { hexTag: '#F9C367', textTag: 'Landing Page' },
+    ],
+    description: 'Conheça a solução em formato de Landing Page para o lindo e bucólico habitacional da FirmaOito, a Morada Reiss.',
+    primaryHref: '#',
+    tertiaryHref: 'www.firmaoito.com.br/moradareiss',
+	img: ''
+  },
+  {
+    title: 'Halsten',
+    tags: [
+      { hexTag: '#DE560B', textTag: 'App' },
+      { hexTag: '#67A1F9', textTag: 'Desktop' },
+    ],
+    description: 'Dê olá para o aplicativo que unifica diversas frentes internas em apenas uma, mostrando para o usuário tudo o que ele precisa ver para acompanhar a conclusão da sua obra. Com a aplicação construída completa, desde o back ao front-end.',
+    primaryHref: '#',
+    tertiaryHref: '#',
+	img: ''
+  }
+];
 ---
 
 <Layout title="Conheça: Atomoon">
@@ -31,9 +67,39 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</main>
 
-	<div class="bg-[#090A11] h-96 w-full px-64 overflow-hidden">
-		
-	</div>
+	<section class="bg-[rgba(9,10,17,1)]  w-full px-64 overflow-hidden flex flex-col items-center justify-center gap-16 py-16">
+		<div class="flex flex-col items-center justify-center gap-4">
+			<h4 class="bg-gradient-to-b from-white font-bold to-gray-500 text-6xl inline-block py-3 text-transparent bg-clip-text">Faça seu negócio</h4>
+			<h4 class="text-5xl font-bold text-[#67A1F9]">ser relevante e objetivo</h4>
+		</div>
+		<div class="w-full flex justify-between gap-2">
+			<HighlightCard description='Seja mobile ou desktop, nós desenvolvemos!' iconUrl='/images/icons/lucide_monitor-smartphone.svg' title='Todas as plataformas'/>
+			<HighlightCard description='Utilizamos Vue, Next, React, React Native, até mesmo fazemos um CMS em Wordpress.' iconUrl='/images/icons/lucide_code-xml.svg' title='Código'/>
+			<HighlightCard description='Nada aqui é feito porque “é bonito”. Focamos na estratégia e na regra do seu negócio.' iconUrl='/images/icons/currency.svg' title='Estratégias'/>
+		</div>
+	</section>
+
+	<section class="w-full px-64 flex flex-col items-start justify-start py-16 bg-[rgba(9,10,17,1)] gap-8">
+		<div class="flex flex-col items-start justify-start gap-2">
+			<h5 class="bg-gradient-to-b from-white font-bold to-gray-500 text-4xl inline-block text-transparent bg-clip-text">Um pouco do nosso trabalho</h5>
+			<h5 class="text-4xl font-bold text-[#67A1F9]">e seus resultados.</h5>
+			<p class="text-white">Conheça o que já entregamos.</p>
+		</div>
+
+		<div class="gap-8 flex flex-col items-center justify-center">
+			{projects.map(project => (
+				<Card 
+				  title={project.title}
+				  img={project.img}
+				  tags={project.tags}
+				  description={project.description}
+				  primaryHref={project.primaryHref}
+				  tertiaryHref={project.tertiaryHref}
+				/>
+			  ))}
+		</div> 
+
+	</section>
 
 </Layout>
 

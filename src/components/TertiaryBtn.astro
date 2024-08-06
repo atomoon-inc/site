@@ -1,4 +1,5 @@
 ---
+
 interface Props {
 	text: string;
     url: string;
@@ -7,4 +8,4 @@ interface Props {
 const { text, url } = Astro.props;
 ---
 
-<a href={url} class="p-4 text-white hover:bg-[#f9c36731] rounded-2xl transition-all ">{text}</a>
+<a href={url} class="p-4 text-white hover:bg-[#f9c36731] rounded-2xl transition-all flex items-center justify-center gap-4">{text} <slot/> </a>
