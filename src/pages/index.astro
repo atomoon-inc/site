@@ -2,12 +2,14 @@
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Carroussel from '../components/Carroussel.astro';
+import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import HighlightCard from '../components/HighlightCard.astro';
 import Input from '../components/Input.astro';
 import PrimaryBtn from '../components/PrimaryBtn.astro';
 import TertiaryBtn from '../components/TertiaryBtn.astro';
 import TextArea from '../components/TextArea.astro';
+import Layout from '../layouts/Layout.astro';
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
@@ -125,10 +127,12 @@ const projects = [
 				<Input id='name' label='Seu nome' name='name' type={'text'} placeholder='Ex: João da Silva'/>
 				<Input id='email' label='Seu E-mail' name='email' type={'text'} placeholder='Ex: mail@mail.com' />
 				<TextArea label='Sua mensagem' name='message' placeholder="Ex: Quero desenvolver um site para meu negócio.">
-				<Button text='teste' />
+				<Button text='Enviar' />
 			</form>
 		</div>
 	</section>
+
+  <Footer />
 </Layout>
 
 <!-- shadow-[inset_0px_-1px_50px_-36px_rgba(249,195,103,1)]  -->
