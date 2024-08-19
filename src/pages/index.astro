@@ -6,8 +6,8 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import HighlightCard from '../components/HighlightCard.astro';
 import Input from '../components/Input.astro';
+import LinkButton from '../components/LinkButton.astro';
 import PrimaryBtn from '../components/PrimaryBtn.astro';
-import TertiaryBtn from '../components/TertiaryBtn.astro';
 import TextArea from '../components/TextArea.astro';
 import Layout from '../layouts/Layout.astro';
 
@@ -65,8 +65,8 @@ const projects = [
 				<p class="text-white max-w-96 text-center pt-8">Descubra como nossas soluções de UX podem transformar seu website, aplicativo móvel ou desktop.</p>
         
 				<div class="flex items-center justify-center gap-4 pt-8">
-					<TertiaryBtn text='Quero um orçamento' url="#"/>
-					<PrimaryBtn text='Quero te conhecer primeiro' url="#"/>
+					<LinkButton text='Quero um orçamento' type='primary' url='form'/>
+					<LinkButton text='Quero te conhecer primeiro' type='secondary' url='#'/>
 				</div>
 
 				<Carroussel />
@@ -101,14 +101,14 @@ const projects = [
 				  tags={project.tags}
 				  description={project.description}
 				  primaryHref={project.primaryHref}
-				  tertiaryHref={project.tertiaryHref}
+				  secondaryHref={project.tertiaryHref}
 				/>
 			  ))}
 		</div> 
 		<PrimaryBtn text='Ver todos os projetos' url='#'/>
 	</section>
 
-	<section class="w-full px-64 bg-[rgba(9,10,17,1)] flex flex-col items-center justify-center py-16 overflow-hidden relative bg-[url('/images/bg-form.png')] bg-no-repeat bg-center bg-cover">
+	<section id="#form" class="w-full px-64 bg-[rgba(9,10,17,1)] flex flex-col items-center justify-center py-16 overflow-hidden relative bg-[url('/images/bg-form.png')] bg-no-repeat bg-center bg-cover">
 		
 		<div class="w-full flex items-center justify-between py-8">
 			<div class="flex flex-col gap-2">
