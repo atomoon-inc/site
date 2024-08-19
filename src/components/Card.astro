@@ -10,7 +10,7 @@ interface Props {
 	img: string;
 }
 
-const { title, description, secondaryHref,primaryHref, tags , img} = Astro.props;
+const { title, description, secondaryHref, primaryHref, tags , img} = Astro.props;
 ---
 
 <div class="bg-[#0C0D14] flex gap-8 p-16 rounded-lg border-[rgba(255,255,255,0.1)] border-[0.1rem] hover:shadow-2xl hover:scale-105 transition-all duration-500 ">
@@ -25,9 +25,9 @@ const { title, description, secondaryHref,primaryHref, tags , img} = Astro.props
 		<p class="text-lg text-white">{description} </p>
 		<div class="flex items-center justify-start w-full gap-4">
 			<LinkButton text='Ver projeto' type='primary' url={primaryHref} icon />
-			<LinkButton text='Ver projeto' type='secondary' url={secondaryHref} icon />
-			<img src="/images/icons/external-link.svg" alt="external-link">
-			</TertiaryBtn>
+			<LinkButton text='Ver projeto' type='secondary' url={secondaryHref} >
+				<img src="/images/icons/external-link.svg" alt="external-link">
+			</LinkButton>
 		</div>
 	</div>
 </div>

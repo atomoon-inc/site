@@ -1,6 +1,5 @@
 ---
-import PrimaryBtn from "./PrimaryBtn.astro";
-import TertiaryBtn from "./TertiaryBtn.astro";
+import LinkButton from "./LinkButton.astro";
 ---
 
 <header class="backdrop-blur-md pb-[0.1rem] bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.01)] to-transparent fixed w-full z-20">
@@ -8,9 +7,9 @@ import TertiaryBtn from "./TertiaryBtn.astro";
         <img src="/images/Logo.svg"/>
         
         <div class="flex items-center justify-center gap-8">
-            <TertiaryBtn text="Sobre nós" url="#"/>
-            <TertiaryBtn text="Projetos" url="#"/>
-            <PrimaryBtn url="#" text="Entre em contato" icon/>
+            <LinkButton type="secondary" text="Sobre nós" url="#"/>
+            <LinkButton type="secondary" text="Projetos" url="#"/>
+            <LinkButton type="primary" text="Entre em contato" url="#"/>
         </div>
     </div>
 </header>
