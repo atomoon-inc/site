@@ -1,15 +1,57 @@
 ---
+import { Menu, X } from "lucide-astro";
 import LinkButton from "./LinkButton.astro";
 ---
 
 <header class="backdrop-blur-md pb-[0.1rem] bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.01)] to-transparent fixed w-full z-20">
-    <div class="flex items-center justify-between lg:px-64 py-4 px-8 bg-[#090a112c]">
-        <img src="/images/Logo.svg"/>
-        
-        <div class="flex items-center justify-center gap-8">
-            <LinkButton type="secondary" text="Sobre nós" url="#"/>
-            <LinkButton type="secondary" text="Projetos" url="#"/>
-            <LinkButton type="primary" text="Entre em contato" url="#"/>
-        </div>
-    </div>
+  <div class="flex items-center justify-between lg:px-64 py-4 px-8 bg-[#090a112c]">
+    <img src="/images/Logo.svg" alt="Logo" />
+    
+    <!-- Seção de Links - Visível no Desktop -->
+    <section class="hidden lg:flex items-center justify-center gap-8">
+      <LinkButton type="secondary" text="Sobre nós" url="#" />
+      <LinkButton type="secondary" text="Projetos" url="#" />
+      <LinkButton type="primary" text="Entre em contato" url="#contact" />
+    </section>
+    
+    <!-- Menu Icon - Visível no Mobile -->
+    <section class="lg:hidden">
+      <div class="hover:bg-[#f9c36731] rounded-md cursor-pointer p-2" id="menu-toggle">
+        <Menu class="stroke-white" id="menu-icon" />
+        <X class="stroke-white hidden" id="close-icon" />
+      </div>
+    </section>
+  </div>
+  
+  <!-- Dropdown Menu - Visível no Mobile -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-[#090a115b] shadow-lg rounded-b-lg px-8 py-4 items-center justify-center">
+    <LinkButton type="secondary" text="Sobre nós" url="#" />
+    <LinkButton type="secondary" text="Projetos" url="#" />
+    <LinkButton type="primary" text="Entre em contato" url="#contact" />
+  </div>
 </header>
+
+<script>
+  // Definindo a função no escopo global
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      const isHidden = menu.classList.contains('hidden');
+  
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+  });
+</script>

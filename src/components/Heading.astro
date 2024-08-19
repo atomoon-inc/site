@@ -1,0 +1,25 @@
+---
+interface Props {
+  level: 1 | 2 | 3 | 4 | 5 | 6; // Níveis de h1 a h6
+  text: string;
+  class?: string; // Classe CSS opcional
+}
+
+const { level, text,  class: customClass } = Astro.props;
+
+const Tag = `h${level}` as keyof HTMLElementTagNameMap;
+
+const headingClasses = {
+  1: "bg-gradient-to-b from-white font-bold to-gray-500 text-3xl lg:text-6xl inline-block text-transparent bg-clip-text",
+  2: "bg-gradient-to-b from-white font-bold to-gray-500 text-3xl lg:text-6xl inline-block text-transparent bg-clip-text",
+  3: "text-white text-3xl",
+  4: "bg-gradient-to-b from-white font-bold to-gray-500 text-3xl lg:text-6xl inline-block py-3 text-transparent bg-clip-text",
+  5: "bg-gradient-to-b from-white font-bold to-gray-500 text-2xl lg:text-4xl inline-block text-transparent bg-clip-text",
+  6: "text-white font-bold"
+};
+const combinedClasses = `${headingClasses[level]} ${customClass || ''}`.trim();
+---
+
+<Tag class={combinedClasses}>
+  {text}
+</Tag>

@@ -5,7 +5,7 @@ interface Props extends HTMLAttributes<'button'> {
     text: string;
 }
 
-const { text, ...attrs } = Astro.props as Props;
+const { text, ...attrs } = Astro.props;
 ---
 
 <div class="py-[0.12rem] w-full h-fit bg-transparent hover:bg-gradient-to-r from-transparent via-[#f9c36734] to-transparent transition-all rounded-2xl group relative text-white">
