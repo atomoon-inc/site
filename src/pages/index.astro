@@ -15,7 +15,7 @@ const projects = [
       { hexTag: 'FF5733', textTag: 'CMS' },
     ],
     description: 'Veja como facilitamos a vida do time de marketing para a inserção de novos maquinários dessa gigante da indústria automobilística.',
-    primaryHref: '/manutencao',
+    // primaryHref: '/manutencao',
     tertiaryHref: 'https://vama.com.br',
 	img: '/images/thumbs/thumb-vama.png'
   },
@@ -25,7 +25,7 @@ const projects = [
       { hexTag: 'F9C367', textTag: 'Landing Page' },
     ],
     description: 'Conheça a solução em formato de Landing Page para o lindo e bucólico habitacional da FirmaOito, a Morada Reiss.',
-    primaryHref: '/manutencao',
+    // primaryHref: '/manutencao',
     tertiaryHref: 'www.firmaoito.com.br/moradareiss',
 	img: '/images/thumbs/Thumbnail - Morada Reiss.png'
   },
@@ -35,7 +35,7 @@ const projects = [
       { hexTag: 'DE560B', textTag: 'Landing Page' },
     ],
     description: 'Uma landing page para uma marca que fornece insumos para times de futebol, profissionais e amador, da região de Joinville',
-    primaryHref: '/manutencao',
+    // primaryHref: '/manutencao',
     tertiaryHref: 'https://somosevus.com.br/',
 	img: '/images/thumbs/Thumbnail - Evus.png'
   }
@@ -59,7 +59,7 @@ const projects = [
 				<p class="text-white max-w-[32rem] text-center pt-4 text-balance">Descubra como nossas soluções de UX podem transformar seu website, aplicativo móvel ou desktop.</p>
         
 				<div class="flex items-center justify-center gap-4 pt-8 lg:flex-row flex-col">
-					<LinkButton text='Quero um orçamento' type='primary' url='https://wa.me/5547996887166?text=Ol%C3%A1%2C%20Vim%20pelo%20site%20da%20Atomoon%2C%20gostaria%20de%20um%20or%C3%A7amento'/>
+					<LinkButton text='Quero um orçamento' target='_blank' type='primary' url='https://wa.me/5547996887166?text=Ol%C3%A1%2C%20Vim%20pelo%20site%20da%20Atomoon%2C%20gostaria%20de%20um%20or%C3%A7amento'/>
 					<LinkButton text='Quero te conhecer primeiro' type='secondary' url='#'/>
 				</div>
 
@@ -96,20 +96,19 @@ const projects = [
 				  img={project.img}
 				  tags={project.tags}
 				  description={project.description}
-				  primaryHref={project.primaryHref}
 				  secondaryHref={project.tertiaryHref}
 				/>
 			  ))}
 		</div> 
-		<LinkButton text='Ver todos os projetos' type="primary" url='#'/>
+		<LinkButton text='Ver todos os projetos' type="primary" url='/projetos'/>
 	</section>
 
 	<section class="scroll-smooth w-full lg:px-64 px-8 bg-[rgba(9,10,17,1)] flex flex-col items-center justify-center py-16 overflow-hidden relative bg-[url('/images/bg-form.png')] bg-no-repeat bg-center bg-cover">
 		
 		<div class="w-full flex lg:flex-row flex-col items-center justify-between py-8">
 			<div class="flex flex-col gap-2 items-start justify-start">
-					<Heading level={4} text="E porque" />
-					<span class="flex text-nowrap gap-0 items-center justify-start text-4xl font-bold text-[#F9C367]">escolher nós? <img src="/images/rocket.png" alt="" class="lg:hidden w-16"> </span> 
+					<Heading level={4} text="E por que" />
+					<span class="flex text-nowrap gap-0 items-center justify-start text-4xl font-bold text-[#F9C367]">nos escolher? <img src="/images/rocket.png" alt="" class="lg:hidden w-16"> </span> 
 				<p class="text-white w-3/4">Consultoria, Análises de usabilidade, desenvolvimento de aplicações simples ou complexas, estamos <strong>preparados para atender desde pequenos a grandes negócios.</strong></p>
 			</div>
 			<img src="/images/rocket.png" alt="" class="lg:block hidden">
@@ -120,7 +119,7 @@ const projects = [
 			<!-- <div class="w-full "> -->
 				<Heading level={2} text="Decidiu?" />
 				<Heading level={5} text="Vem conversar com a gente" class="text-[#F9C367]" />
-				<LinkButton text='Solicitar orçamento' type='primary' url='https://wa.me/5547996887166?text=Ol%C3%A1%2C%20Vim%20pelo%20site%20da%20Atomoon%2C%20gostaria%20de%20um%20or%C3%A7amento'/>
+				<LinkButton text='Solicitar orçamento' type='primary' target='_blank' url='https://wa.me/5547996887166?text=Ol%C3%A1%2C%20Vim%20pelo%20site%20da%20Atomoon%2C%20gostaria%20de%20um%20or%C3%A7amento'/>
 			<!-- </div> -->
 					
 			<!-- <form id="contact" class="flex flex-col gap-6 p-8 border-[rgba(255,255,255,.02)] border-[0.12rem] bg-[rgba(255,255,255,.01)] backdrop-blur-lg w-3/4 rounded-lg"> -->

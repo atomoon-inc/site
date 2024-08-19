@@ -1,0 +1,97 @@
+---
+import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Heading from "../components/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+
+const projects = [
+  {
+    title: 'Vama Industrial',
+    tags: [
+      { hexTag: 'FF5733', textTag: 'CMS' },
+      { hexTag: 'F9C367', textTag: 'Landing Page' },
+    ],
+    description: 'Veja como facilitamos a vida do time de marketing para a inserção de novos maquinários dessa gigante da indústria automobilística.',
+    primaryHref: '/manutencao',
+    tertiaryHref: 'https://vama.com.br',
+	img: '/images/thumbs/thumb-vama.png'
+  },
+  {
+    title: 'Morada Reiss',
+    tags: [
+      { hexTag: 'F9C367', textTag: 'Landing Page' },
+    ],
+    description: 'Conheça a solução em formato de Landing Page para o lindo e bucólico habitacional da FirmaOito, a Morada Reiss.',
+    primaryHref: '/projetos/moradareiss',
+    tertiaryHref: 'www.firmaoito.com.br/moradareiss',
+	img: '/images/thumbs/Thumbnail - Morada Reiss.png'
+  },
+  {
+    title: 'Evus',
+    tags: [
+      { hexTag: 'F9C367', textTag: 'Landing Page' },
+    ],
+    description: 'Uma landing page para uma marca que fornece insumos para times de futebol, profissionais e amador, da região de Joinville.',
+    primaryHref: '/manutencao',
+    tertiaryHref: 'https://somosevus.com.br/',
+	img: '/images/thumbs/Thumbnail - Evus.png'
+  },
+  {
+    title: 'Praxis',
+    tags: [
+      { hexTag: 'F9C367', textTag: 'Landing Page' },
+    ],
+    description: 'Uma landing page para uma consultoria aduaneira.',
+    primaryHref: '/manutencao',
+    tertiaryHref: 'https://praxisaduaneira.com.br/',
+	img: '/images/thumbs/Thumbnail - Praxis.png'
+  },
+  {
+    title: 'Halsten',
+    tags: [
+      { hexTag: '1A1751', textTag: 'Aplicativo' },
+    ],
+    description: 'Projeto em andamento de desenvolvimento de um app para uma incorporadora de Joinville.',
+    primaryHref: '/manutencao',
+    tertiaryHref: 'https://halsten.com.br/',
+	img: '/images/thumbs/halsten-preview.png'
+  },
+  {
+    title: 'Artived',
+    tags: [
+      { hexTag: '1A1751 ', textTag: 'Aplicativo' },
+      { hexTag: 'fbba4bc4', textTag: 'Site' },
+      { hexTag: 'DE560B', textTag: 'E-commerce' },
+    ],
+    description: 'Construção de um e-commerce para a fabricação de quadros personalizados.',
+    primaryHref: '/manutencao',
+    tertiaryHref: '/manutencao',
+	img: '/images/thumbs/Thumbnail - Artived.png'
+  },
+  
+
+];
+---
+
+<Layout title="Conheça todos os projetos">
+    <Header/> 
+    <main class="h-fit w-full bg-gradient-to-t from-[#090A11] to-[#141624] lg:px-64 px-8 py-16 flex flex-col">
+
+        <Heading level={1} text="Conheça nossos projetos" class="text-center w-full py-10" />
+
+        <div class="gap-8 flex flex-col items-center justify-center h-fit">
+            {projects.map(project => (
+                <Card 
+                title={project.title}
+                img={project.img}
+                tags={project.tags}
+                description={project.description}
+                primaryHref={project.primaryHref}
+                secondaryHref={project.tertiaryHref}
+                />
+            ))}
+    </div>
+    </main>
+    <Footer/>
+</Layout>

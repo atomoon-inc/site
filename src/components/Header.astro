@@ -5,12 +5,12 @@ import LinkButton from "./LinkButton.astro";
 
 <header class="backdrop-blur-md pb-[0.1rem] bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.01)] to-transparent fixed w-full z-20">
   <div class="flex items-center justify-between lg:px-64 py-4 px-8 bg-[#090a112c]">
-    <img src="/images/Logo.svg" alt="Logo" />
+   <a href="/" class="cursor-pointer"> <img src="/images/Logo.svg" alt="Logo" /></a>
     
     <!-- Seção de Links - Visível no Desktop -->
     <section class="hidden lg:flex items-center justify-center gap-8">
       <LinkButton type="secondary" text="Sobre nós" url="#" />
-      <LinkButton type="secondary" text="Projetos" url="#" />
+      <LinkButton type="secondary" text="Projetos" url="/projetos" />
       <LinkButton type="primary" text="Entre em contato" url="#contact" />
     </section>
     
@@ -26,7 +26,7 @@ import LinkButton from "./LinkButton.astro";
   <!-- Dropdown Menu - Visível no Mobile -->
   <div id="mobile-menu" class="hidden lg:hidden bg-[#090a115b] shadow-lg rounded-b-lg px-8 py-4 items-center justify-center">
     <LinkButton type="secondary" text="Sobre nós" url="#" />
-    <LinkButton type="secondary" text="Projetos" url="#" />
+    <LinkButton type="secondary" text="Projetos" url="/projetos" />
     <LinkButton type="primary" text="Entre em contato" url="#contact" />
   </div>
 </header>
