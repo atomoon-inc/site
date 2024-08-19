@@ -2,25 +2,26 @@
 // Button.astro
 
 import { ChevronRight } from 'lucide-astro';
+import type { HTMLProps } from 'react';
 
-interface Props {
+interface Props extends HTMLProps<HTMLAnchorElement> {
   text: string;
   url: string;
   type: 'primary' | 'secondary';
   icon?: boolean;
 }
 
-const { text, url, type, icon } = Astro.props;
+const { text, url, type, icon, ...anchorProps } = Astro.props;
 ---
 
 {type === 'primary' ? (
-  <div class="py-[0.12rem]  w-fit h-fit bg-transparent hover:bg-gradient-to-r from-transparent via-[#f9c36734] to-transparent  transition-all rounded-2xl group relative text-white">
-    <a target="_blank" ={url} class="py-4 text-nowrap px-4 w-full h-fit bg-[#090a115b] group shadow-[inset_0px_-1px_50px_-36px_rgba(249,195,103,1)] scroll-smooth rounded-2xl flex items-center justify-center">
+  <div class="py-[0.12rem] cursor-pointer w-fit h-fit bg-transparent hover:bg-gradient-to-r from-transparent via-[#f9c36734] to-transparent transition-all rounded-2xl group relative text-white">
+    <a href={url} class="py-4 text-nowrap px-4 w-full h-fit bg-[#090a115b] group shadow-[inset_0px_-1px_50px_-36px_rgba(249,195,103,1)] scroll-smooth rounded-2xl flex items-center justify-center" {...anchorProps}>
       {text} {icon && <ChevronRight color="white"/>}
     </a>
   </div>
 ) : (
-  <a href={url} target="_blank" class="p-4 text-white text-nowrap w-fit h-fit hover:bg-[#f9c36731] rounded-2xl transition-all flex items-center justify-center gap-4 scroll-smooth">
+  <a href={url} class="p-4 cursor-pointer text-white text-nowrap w-fit h-fit hover:bg-[#f9c36731] rounded-2xl transition-all flex items-center justify-center gap-4 scroll-smooth" {...anchorProps}>
     {text} <slot/>
   </a>
 )}

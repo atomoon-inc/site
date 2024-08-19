@@ -12,7 +12,7 @@ const projects = [
   {
     title: 'Vama Industrial',
     tags: [
-      { hexTag: '#FF5733', textTag: 'CMS' },
+      { hexTag: 'FF5733', textTag: 'CMS' },
     ],
     description: 'Veja como facilitamos a vida do time de marketing para a inserção de novos maquinários dessa gigante da indústria automobilística.',
     primaryHref: '/manutencao',
@@ -22,23 +22,22 @@ const projects = [
   {
     title: 'Morada Reiss',
     tags: [
-      { hexTag: '#F9C367', textTag: 'Landing Page' },
+      { hexTag: 'F9C367', textTag: 'Landing Page' },
     ],
     description: 'Conheça a solução em formato de Landing Page para o lindo e bucólico habitacional da FirmaOito, a Morada Reiss.',
     primaryHref: '/manutencao',
     tertiaryHref: 'www.firmaoito.com.br/moradareiss',
-	img: ''
+	img: '/images/thumbs/Thumbnail - Morada Reiss.png'
   },
   {
-    title: 'Halsten',
+    title: 'Evus',
     tags: [
-      { hexTag: '#DE560B', textTag: 'App' },
-      { hexTag: '#67A1F9', textTag: 'Desktop' },
+      { hexTag: 'DE560B', textTag: 'Landing Page' },
     ],
-    description: 'Dê olá para o aplicativo que unifica diversas frentes internas em apenas uma, mostrando para o usuário tudo o que ele precisa ver para acompanhar a conclusão da sua obra. Com a aplicação construída completa, desde o back ao front-end.',
+    description: 'Uma landing page para uma marca que fornece insumos para times de futebol, profissionais e amador, da região de Joinville',
     primaryHref: '/manutencao',
-    tertiaryHref: '#',
-	img: ''
+    tertiaryHref: 'https://somosevus.com.br/',
+	img: '/images/thumbs/Thumbnail - Evus.png'
   }
 ];
 ---
@@ -57,7 +56,7 @@ const projects = [
 				<Heading level={1} text="Solução de problemas" class="text-center w-full text-4xl" />
 				<Heading level={1} text="do micro ao macro." class="text-3xl text-center" />
 
-				<p class="text-white max-w-96 text-center pt-8">Descubra como nossas soluções de UX podem transformar seu website, aplicativo móvel ou desktop.</p>
+				<p class="text-white max-w-[32rem] text-center pt-4 text-balance">Descubra como nossas soluções de UX podem transformar seu website, aplicativo móvel ou desktop.</p>
         
 				<div class="flex items-center justify-center gap-4 pt-8 lg:flex-row flex-col">
 					<LinkButton text='Quero um orçamento' type='primary' url='https://wa.me/5547996887166?text=Ol%C3%A1%2C%20Vim%20pelo%20site%20da%20Atomoon%2C%20gostaria%20de%20um%20or%C3%A7amento'/>
@@ -130,6 +129,7 @@ const projects = [
 				<!-- <TextArea label='Sua mensagem' name='message' placeholder="Ex: Quero desenvolver um site para meu negócio."> -->
 			<!-- </form> -->
 		</section>
+	</section>
 
   <Footer />
 </Layout>
