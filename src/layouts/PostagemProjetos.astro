@@ -1,0 +1,100 @@
+---
+import { ExternalLink } from "lucide-astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Heading from "../components/Heading.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Layout from "./Layout.astro";
+
+const {frontmatter} = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+    <Header></Header>
+    <main class="w-full lg:pt-32 lg:px-64 gap-8 px-8 pt-16 flex flex-col items-start  bg-gradient-to-t from-[#090A11] to-[#141624] h-fit">
+        <div class="w-full flex items-center justify-between">
+            <Heading level={2} text={frontmatter.title} class="pb-3" />
+            <LinkButton text="Abrir site" type="secondary" url={frontmatter.link} >
+                <ExternalLink class="stroke-white"/>
+            </LinkButton>
+        </div>
+        <Heading level={6} text={frontmatter.description} />
+        <figure class="w-full h-[32rem] bg-red-500 rounded-xl overflow-hidden bg-center bg-cover" style={`background-image:url('${frontmatter.image}')`} />
+
+        
+        <article class="w-full py-8 text-white gap-4 flex flex-col">
+            <slot />
+        </article>
+    </main>
+    
+<Footer />
+</Layout>
+    
+<style is:global>
+
+h1 {
+  background: linear-gradient(to bottom, white, gray);
+  font-weight: bold;
+  color: transparent;
+  font-size: 4rem; /* Ajuste o valor conforme necessário */
+  line-height: 1.2;
+  display: inline-block;
+  background-clip: text;
+}
+
+img {
+  border-radius: 1.5rem;
+}
+
+h2 {
+  background: linear-gradient(to bottom, white, gray);
+  font-weight: bold;
+  color: transparent;
+  font-size: 3rem; /* Ajuste o valor conforme necessário */
+  line-height: 1.2;
+  display: inline-block;
+  background-clip: text;
+}
+
+h3 {
+  color: white;
+  font-size: 1.3rem; /* Ajuste o valor conforme necessário */
+  line-height: 1.2;
+}
+
+h4 {
+  background: linear-gradient(to bottom, white, gray);
+  font-weight: bold;
+  color: transparent;
+  font-size: 3rem; /* Ajuste o valor conforme necessário */
+  line-height: 1.2;
+  display: inline-block;
+  padding: 0.75rem 0; /* Ajuste o valor conforme necessário */
+  background-clip: text;
+}
+
+h5 {
+  background: linear-gradient(to bottom, white, gray);
+  font-weight: bold;
+  color: transparent;
+  font-size: 2rem; /* Ajuste o valor conforme necessário */
+  line-height: 1.2;
+  display: inline-block;
+  background-clip: text;
+}
+
+h6 {
+  color: white;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Media Query para tamanhos de tela grandes */
+@media (min-width: 1024px) { /* lg breakpoint (1024px) */
+  .container {
+    padding-top: 8rem; /* 32px * 1rem (em uma base de 16px) */
+    padding-left: 4rem; /* 64px * 1rem (em uma base de 16px) */
+    padding-right: 4rem; /* 64px * 1rem (em uma base de 16px) */
+  }
+}
+</style>
